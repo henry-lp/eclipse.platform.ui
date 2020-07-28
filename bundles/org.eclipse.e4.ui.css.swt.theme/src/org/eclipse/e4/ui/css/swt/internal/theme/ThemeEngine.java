@@ -260,7 +260,7 @@ public class ThemeEngine implements IThemeEngine {
 				}
 			}
 			Theme theme = new Theme(id, label);
-			if (osVersion != "") {
+			if (!osVersion.equals("")) {
 				theme.setOsVersion(osVersion);
 			}
 			themes.add(theme);

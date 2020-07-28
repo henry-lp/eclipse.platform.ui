@@ -258,13 +258,13 @@ public class Address implements IPropertySource {
 	@Override
 	public boolean isPropertySet(Object property) {
 		if (property.equals(P_ID_PROVINCE))
-			return getProvince() != PROVINCE_DEFAULT;
+			return !getProvince().equals(org.eclipse.ui.examples.propertysheet.Address.PROVINCE_DEFAULT);
 		if (property.equals(P_ID_STREET))
 			return !STREET_DEFAULT.equals(getStreet());
 		if (property.equals(P_ID_CITY))
-			return getCity() != CITY_DEFAULT;
+			return !getCity().equals(org.eclipse.ui.examples.propertysheet.Address.CITY_DEFAULT);
 		if (property.equals(P_ID_POSTALCODE))
-			return getPostalCode() != POSTALCODE_DEFAULT;
+			return !getPostalCode().equals(org.eclipse.ui.examples.propertysheet.Address.POSTALCODE_DEFAULT);
 		return false;
 	}
 
@@ -378,4 +378,4 @@ public class Address implements IPropertySource {
 
 		return outStringBuilder.toString();
 	}
-}
+	}

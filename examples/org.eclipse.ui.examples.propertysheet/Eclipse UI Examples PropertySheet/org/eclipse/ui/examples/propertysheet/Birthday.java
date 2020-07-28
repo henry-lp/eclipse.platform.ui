@@ -30,10 +30,12 @@ import org.eclipse.ui.views.properties.TextPropertyDescriptor;
  * Example IPropertySource who itself is NOT editable, but whose children are.
  * The values of the children determine the value of the birthday.
  */
-public class Birthday implements IPropertySource {
+public class Birthday implements IPropertySource {private java.lang.Integer day;
 
-	//Properties
-	private Integer day, month, year;
+	private java.lang.Integer month;
+
+	// Properties
+	private java.lang.Integer year;
 
 	//Property unique keys
 	public static final String P_ID_DAY = "Birthday.day"; //$NON-NLS-1$
@@ -197,11 +199,11 @@ public class Birthday implements IPropertySource {
 	@Override
 	public boolean isPropertySet(Object property) {
 		if (P_ID_DAY.equals(property))
-			return getDay() != DAY_DEFAULT;
+			return !getDay().equals(org.eclipse.ui.examples.propertysheet.Birthday.DAY_DEFAULT);
 		if (P_ID_MONTH.equals(property))
-			return getMonth() != MONTH_DEFAULT;
+			return !getMonth().equals(org.eclipse.ui.examples.propertysheet.Birthday.MONTH_DEFAULT);
 		if (P_ID_YEAR.equals(property))
-			return getYear() != YEAR_DEFAULT;
+			return !getYear().equals(org.eclipse.ui.examples.propertysheet.Birthday.YEAR_DEFAULT);
 		return false;
 	}
 
@@ -284,4 +286,4 @@ public class Birthday implements IPropertySource {
 				.intValue() - 1, getDay().intValue())).getTime();
 		return formatter.format(bday);
 	}
-}
+		}

@@ -338,7 +338,7 @@ public class FontRegistry extends ResourceRegistry {
 				bundle = ResourceBundle.getBundle(OSLocation);
 				readResourceBundle(bundle, WSLocation);
 			} catch (MissingResourceException osException) {
-				if (location != OSLocation) {
+				if (!location.equals(OSLocation)) {
 					bundle = ResourceBundle.getBundle(location);
 					readResourceBundle(bundle, WSLocation);
 				} else {

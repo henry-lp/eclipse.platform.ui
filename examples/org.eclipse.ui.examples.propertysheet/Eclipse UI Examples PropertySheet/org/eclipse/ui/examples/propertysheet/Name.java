@@ -144,11 +144,11 @@ public class Name implements IPropertySource {
 	@Override
 	public boolean isPropertySet(Object key) {
 		if (key.equals(P_ID_FIRSTNAME))
-			return getFirstName() != FIRSTNAME_DEFAULT;
+			return !getFirstName().equals(org.eclipse.ui.examples.propertysheet.Name.FIRSTNAME_DEFAULT);
 		if (key.equals(P_ID_LASTNAME))
-			return getLastName() != LASTNAME_DEFAULT;
+			return !getLastName().equals(org.eclipse.ui.examples.propertysheet.Name.LASTNAME_DEFAULT);
 		if (key.equals(P_ID_MIDDLENAME))
-			return getInitial() != MIDDLENAME_DEFAULT;
+			return !getInitial().equals(org.eclipse.ui.examples.propertysheet.Name.MIDDLENAME_DEFAULT);
 		return false;
 	}
 
@@ -228,15 +228,15 @@ public class Name implements IPropertySource {
 	@Override
 	public String toString() {
 		StringBuilder outStringBuilder = new StringBuilder();
-		if (getFirstName() != FIRSTNAME_DEFAULT) {
+		if (!getFirstName().equals(org.eclipse.ui.examples.propertysheet.Name.FIRSTNAME_DEFAULT)) {
 			outStringBuilder.append(getFirstName());
 			outStringBuilder.append(" "); //$NON-NLS-1$
 		}
-		if (getInitial() != MIDDLENAME_DEFAULT) {
+		if (!getInitial().equals(org.eclipse.ui.examples.propertysheet.Name.MIDDLENAME_DEFAULT)) {
 			outStringBuilder.append(getInitial());
 			outStringBuilder.append(" "); //$NON-NLS-1$
 		}
-		if (getLastName() != LASTNAME_DEFAULT) {
+		if (!getLastName().equals(org.eclipse.ui.examples.propertysheet.Name.LASTNAME_DEFAULT)) {
 			outStringBuilder.append(getLastName());
 		}
 

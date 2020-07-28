@@ -93,7 +93,7 @@ public class FocusControlSourceProvider extends AbstractSourceProvider implement
 	 */
 	private void focusIn(Widget widget) {
 		String id = controlToId.get(widget);
-		if (currentId != id) {
+		if (!currentId.equals(id)) {
 			Map<String, Object> m = new HashMap<>();
 			if (id == null) {
 				currentId = null;

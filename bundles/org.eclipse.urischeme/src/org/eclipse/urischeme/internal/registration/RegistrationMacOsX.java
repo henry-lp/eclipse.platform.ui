@@ -66,7 +66,7 @@ public class RegistrationMacOsX implements IOperatingSystemRegistration {
 			SchemeInformation schemeInfo = new SchemeInformation(scheme.getName(), scheme.getDescription());
 
 			String location = determineHandlerLocation(getLsRegisterOutput(), scheme.getName());
-			if (location != "" && getEclipseLauncher().startsWith(location)) { //$NON-NLS-1$
+			if (!location.equals("") && getEclipseLauncher().startsWith(location)) { //$NON-NLS-1$
 				schemeInfo.setHandled(true);
 			}
 			schemeInfo.setHandlerLocation(location);

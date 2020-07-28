@@ -412,15 +412,15 @@ public class UserElement extends OrganizationElement {
 		if (property.equals(P_ID_FULLNAME))
 			return getFullName() != fullName_Default;
 		if (property.equals(P_ID_PHONENUMBER))
-			return getPhoneNumber() != phoneNumber_Default;
+			return !getPhoneNumber().equals(phoneNumber_Default);
 		if (property.equals(P_ID_EMAIL))
 			return getEmailAddress() != emailAddress_Default;
 		if (property.equals(P_ID_COOP))
-			return getCoop() != coop_Default;
+			return !getCoop().equals(coop_Default);
 		if (property.equals(P_ID_BDAY))
 			return getBirthday() != birthday_Default;
 		if (property.equals(P_ID_SALARY))
-			return getSalary() != salary_Default;
+			return !getSalary().equals(salary_Default);
 		if (property.equals(P_ID_HAIRCOLOR))
 			return getHairColor() != hairColor_Default;
 		if (property.equals(P_ID_EYECOLOR))
@@ -610,4 +610,4 @@ public class UserElement extends OrganizationElement {
 	public RGB getBackground(Object element) {
 		return null;
 	}
-}
+	}

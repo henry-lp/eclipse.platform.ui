@@ -163,7 +163,7 @@ public class LabelRetargetAction extends RetargetAction {
 		// Append our accelerator
 		if (acceleratorText != null) {
 			str = str + '\t' + acceleratorText;
-		} else if (str != newText) {
+		} else if (!str.equals(newText)) {
 			str = str + '\t';
 		}
 		return str;

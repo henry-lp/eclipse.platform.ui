@@ -53,7 +53,7 @@ public class TableCursor extends AbstractCellCursor {
 			x += imageSize.width;
 		}
 		String text = cell.getText();
-		if (text != "") { //$NON-NLS-1$
+		if (!text.equals("")) { //$NON-NLS-1$
 			Rectangle bounds = cell.getBounds();
 			Point extent = gc.stringExtent(text);
 			// Temporary code - need a better way to determine table trim
