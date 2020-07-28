@@ -101,7 +101,7 @@ public class WorkingSetNewWizard extends Wizard implements IWorkingSetNewWizard 
 		if (workingSetTypePage != null && page == workingSetTypePage) {
 			String pageId = workingSetTypePage.getSelection();
 			if (pageId != null) {
-				if (workingSetEditPage == null || pageId != editPageId) {
+				if (workingSetEditPage == null || !pageId.equals(editPageId) ) {
 					WorkingSetRegistry registry = WorkbenchPlugin.getDefault().getWorkingSetRegistry();
 					workingSetEditPage = registry.getWorkingSetPage(pageId);
 					addPage(workingSetEditPage);

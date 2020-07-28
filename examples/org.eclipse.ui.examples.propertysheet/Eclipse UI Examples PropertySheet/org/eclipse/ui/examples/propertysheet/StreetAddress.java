@@ -171,11 +171,11 @@ public class StreetAddress implements IPropertySource {
 	@Override
 	public boolean isPropertySet(Object property) {
 		if (property.equals(P_ID_BUILD_NO))
-			return getBuildNo() != BUILD_NO_DEFAULT;
+			return !getBuildNo().equals(org.eclipse.ui.examples.propertysheet.StreetAddress.BUILD_NO_DEFAULT);
 		if (property.equals(P_ID_APTBOX))
-			return getAptBox() != APTBOX_DEFAULT;
+			return !getAptBox().equals(org.eclipse.ui.examples.propertysheet.StreetAddress.APTBOX_DEFAULT);
 		if (property.equals(P_ID_STREET))
-			return getStreetName() != STREETNAME_DEFAULT;
+			return !getStreetName().equals(org.eclipse.ui.examples.propertysheet.StreetAddress.STREETNAME_DEFAULT);
 		return false;
 	}
 

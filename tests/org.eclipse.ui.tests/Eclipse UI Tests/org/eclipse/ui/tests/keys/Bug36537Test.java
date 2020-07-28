@@ -93,29 +93,29 @@ public class Bug36537Test {
 				same &= (contextA == null) || (contextB == null)
 						|| (contextA.equals(contextB));
 				if (((contextA == null) || (contextB == null))
-						&& (contextA != contextB)) {
+						&& !contextA.equals(contextB) ) {
 					nullMatches++;
 				}
 				same &= (keyConfA == null) || (keyConfB == null)
 						|| (keyConfA.equals(keyConfB));
 				if (((keyConfA == null) || (keyConfB == null))
-						&& (keyConfA != keyConfB)) {
+						&& !keyConfA.equals(keyConfB) ) {
 					nullMatches++;
 				}
 				same &= (localeA == null) || (localeB == null)
 						|| (localeA.equals(localeB));
 				if (((localeA == null) || (localeB == null))
-						&& (localeA != localeB)) {
+						&& !localeA.equals(localeB) ) {
 					nullMatches++;
 				}
 				same &= (platformA == null) || (platformB == null)
 						|| (platformA.equals(platformB));
 				if (((platformA == null) || (platformB == null))
-						&& (platformA != platformB)) {
+						&& !platformA.equals(platformB) ) {
 					nullMatches++;
 				}
 
-				assertFalse(
+				org.junit.Assert.assertFalse(
 						"Redundant key bindings: " + binding + ", " + matchedBinding, same && (nullMatches < 1)); //$NON-NLS-1$ //$NON-NLS-2$
 			}
 
